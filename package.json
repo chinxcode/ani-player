@@ -8,7 +8,6 @@
         "dev": "vite",
         "build": "vite build",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist",
         "lint": "eslint .",
         "preview": "vite preview"
     },
@@ -20,8 +19,7 @@
         "artplayer-plugin-hls-quality": "^2.0.0",
         "hls.js": "^1.5.15",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "gh-pages": "^6.1.1"
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
         "@eslint/js": "^9.9.0",
