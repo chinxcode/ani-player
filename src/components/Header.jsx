@@ -1,25 +1,28 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ darkMode, toggleDarkMode }) => (
-    <header
-        className={`${
-            darkMode ? "bg-gray-800" : "bg-white"
-        } p-8 text-center shadow-lg rounded-lg mb-8 transition-colors duration-300 flex justify-center items-center`}
-    >
-        <div className="flex-grow">
-            <h1 className={`text-4xl font-bold ${darkMode ? "text-purple-400" : "text-purple-600"} mb-2`}>Video Player</h1>
-            <p className={`text-lg ${darkMode ? "text-gray-400" : "text-gray-600"}`}>Experience your favorite videos in style</p>
+    <header className={`${darkMode ? "bg-gray-800" : "bg-white"} p-6 shadow-lg rounded-lg mb-8 transition-colors duration-300`}>
+        <div className="container mx-auto flex justify-between items-center">
+            <div className="flex items-center">
+                <div className={`${darkMode ? "bg-purple-600" : "bg-purple-500"} p-3 rounded-full mr-4`}>
+                    <FontAwesomeIcon icon={faPlay} className="text-white text-2xl" />
+                </div>
+                <div>
+                    <h1 className={`text-3xl font-bold ${darkMode ? "text-purple-400" : "text-purple-600"}`}>Ani-Player</h1>
+                    <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>Your Ultimate Video Experience</p>
+                </div>
+            </div>
+            <button
+                onClick={toggleDarkMode}
+                className={`p-3 ${
+                    darkMode ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-200 hover:bg-gray-300"
+                } rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500`}
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            >
+                <FontAwesomeIcon icon={darkMode ? faSun : faMoon} className={`text-xl ${darkMode ? "text-yellow-400" : "text-gray-800"}`} />
+            </button>
         </div>
-        <button
-            onClick={toggleDarkMode}
-            className={`p-3 ${
-                darkMode ? "bg-gray-700 text-yellow-400" : "bg-gray-200 text-gray-800"
-            } rounded-lg transition-colors duration-300 ml-4`}
-        >
-            <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
-        </button>
     </header>
 );
 
