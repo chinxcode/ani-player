@@ -1,11 +1,14 @@
-import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import VideoPlayer from "./components/VideoPlayer";
 
 function App() {
     return (
-        <div className="App">
-            <VideoPlayer />
-        </div>
+        <>
+            <Analytics />
+            <div className="App">
+                <VideoPlayer />
+            </div>
+        </>
     );
 }
 
