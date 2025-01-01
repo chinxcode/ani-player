@@ -3,6 +3,7 @@ import Header from "./Header";
 import InputSection from "./InputSection";
 import Footer from "./Footer";
 import WatchPlayer from "./WatchPlayer";
+import Documentation from "./Documentation";
 
 const VideoPlayer = () => {
     const [inputUrl, setInputUrl] = useState("");
@@ -60,7 +61,7 @@ const VideoPlayer = () => {
                         <div
                             className={`${
                                 darkMode ? "bg-gray-800" : "bg-white"
-                            } rounded-lg p-4 shadow-lg transition-colors duration-300 flex justify-center items-center`}
+                            } rounded-lg p-4 shadow-lg transition-colors duration-300 flex justify-center items-center mb-8`}
                         >
                             <div className="sm:w-[80%] sm:h-[50%]">
                                 <WatchPlayer
@@ -74,6 +75,7 @@ const VideoPlayer = () => {
                             </div>
                         </div>
                     )}
+                    <Documentation darkMode={darkMode} />
                 </main>
             </div>
             <Footer darkMode={darkMode} />
